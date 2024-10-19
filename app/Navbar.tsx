@@ -27,7 +27,7 @@ function Navbar() {
             })}
             key={link.path}
           >
-            <a href={link.path}>{link.name}</a>
+            <Link href={link.path}>{link.name}</Link>
           </li>
         ))}
       </ul>
