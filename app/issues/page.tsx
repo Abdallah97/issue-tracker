@@ -1,15 +1,12 @@
 import prisma from "@/prisma/client";
-import { Button, Table } from "@radix-ui/themes";
-
+import { Table } from "@radix-ui/themes";
 import IssuesStatusBadge from "../components/IssuesStatusBadge";
-import delay from "delay";
-import ActionsHeader from "./ActionsHeader";
 import Link from "../components/Link";
+import ActionsHeader from "./ActionsHeader";
 
-const NewIssuePage = async () => {
+const IssuesPage = async () => {
   const issues = await prisma.issue.findMany();
 
-  await delay(2000);
   return (
     <div>
       <ActionsHeader />
@@ -54,4 +51,6 @@ const NewIssuePage = async () => {
   );
 };
 
-export default NewIssuePage;
+export const dynamic = "force-dynamic";
+
+export default IssuesPage;
